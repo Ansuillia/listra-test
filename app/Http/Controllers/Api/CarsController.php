@@ -8,8 +8,13 @@ use Illuminate\Http\Request;
 
 class CarsController extends Controller
 {
+    public function __construct(Car $cars)
+    {
+        $this->cars = $cars;
+    }
+
     public function index()
     {
-        return ['status' => true];
+        return $this->cars->all();
     }
 }
