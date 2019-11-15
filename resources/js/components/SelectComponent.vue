@@ -18,18 +18,10 @@
 
                 <label for="entrada">Entrada</label>
                 <input v-model="entrada" type="number" placeholder="Entrada" id="entrada">
+                <button @click="calculo = true">Calcular</button>
 
-                <select v-model="parcela">
-                    <option
-                        v-for="{ value, label } in parcelas"
-                        v-bind:key="value"
-                        v-bind:value="{ value, label }"
-                        >{{ label }}</option
-                    >
-                </select>
-
-                <div v-if="parcela">
-                    <p>{{ (car.price - entrada) / parcela.value }}</p>
+                <div v-if="calculo">
+                    <p v-for="parcela in parcelas" v-bind:key="parcela">{{ parcela }}x de {{ (car.price - entrada) / parcela }}</p>
                 </div>
             </fieldset>
         </div>
@@ -37,24 +29,20 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
+    computed: {
+        ...mapState([
+            'cars'
+        ])
+    },
     data() {
         return {
-            cars: [
-                { id: 1, description: "Car 1", price: 120000.45 },
-                { id: 2, description: "Car 2", price: 35245.50 },
-                { id: 3, description: "Car 3", price: 370000.98 },
-                { id: 4, description: "Car 4", price: 25300 },
-                { id: 5, description: "Car 5", price: 88560 }
-            ],
             car: null,
-            parcelas: [
-                { value: 6, label: "6 vezes" },
-                { value: 12, label: "12 vezes" },
-                { value: 24, label: "24 vezes" }
-            ],
             entrada: 0,
-            parcela: null
+            calculo: false,
+            parcelas: [6, 12, 48]
         };
     }
 };
