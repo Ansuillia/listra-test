@@ -16,6 +16,7 @@ class CarsController extends Controller
 
     public function index()
     {
-        return new CarCollection(Car::all());
+        $cars = $this->cars->orderBy('description')->get();
+        return new CarCollection($cars);
     }
 }
