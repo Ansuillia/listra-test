@@ -1,18 +1,26 @@
 <template>
     <div>
         <h1>Cars</h1>
-        <select-component cars='cars'></select-component>
+        <select-component></select-component>
+        <details-component v-if="car"></details-component>
     </div>
 </template>
 
 <script>
 import SelectComponent from '../components/SelectComponent'
-import { mapActions } from 'vuex'
+import DetailsComponent from '../components/DetailsComponent'
+import { mapActions, mapState } from 'vuex'
 
 export default {
     name: 'cars',
     components: {
-        SelectComponent
+        SelectComponent,
+        DetailsComponent
+    },
+    computed: {
+        ...mapState([
+            'car'
+        ])
     },
     methods: {
         ...mapActions([
