@@ -13,6 +13,6 @@
     <body>
         <div id="app"></div>
 
-        <script src="{{ (env('APP_ENV') === 'development') ? mix('js/app.js') : asset('js/app.js') }}"></script>
+        <script src="{{ (env('APP_ENV') === 'development') ? mix('js/main.js') : asset('js/app.js') }}"></script>
     </body>
 </html>
