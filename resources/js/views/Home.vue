@@ -28,7 +28,7 @@
                 </div>
                 <div class="row">
                     <div class="col s12">
-                        <a href="/" class="btn blue darken-3 col s12">Repositório com Aplicativo</a>
+                        <a href="https://github.com/Ansuillia/listra-test-app-vue" class="btn blue darken-3 col s12">Repositório com Aplicativo</a>
                     </div>
                 </div>
             </div>
