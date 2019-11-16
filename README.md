@@ -1,27 +1,16 @@
-# Teste para Listra
+# Instruções
 
+Para rodar o projeto:
 
-Objetivo: Este teste possui como objetivo simular o financiamento de um veículo no qual o cliente possui interesse.
+1) Rodar os comandos:
+   - ``composer install``
+   - ``npm i``
+2) Configurar o arquivo .env para conectar ao banco de dados que será utilizado
+3) Há duas formas de popular o banco:
+   1) Utilizando o arquivo listra_cars.sql que está no caminho database/sql/cars
+        - Esse arquivo contém a criação da tabela e inserção de dados de exemplo. O banco deve ter sido criado para que funcione.
+    2) Utilizando o seed.
+        - Para isso deve-se rodar o comando: ``php artisan db:seed``
 
-Para que esse requisito seja atendido, deverá ser criado um banco de dados, com uma tabela de veículos, no qual ela deverá armazenar um código, descrição e valor de um carro.
-
-Para fins de testes, esta tabela deverá ser populada com alguns registros.
-
-Para esta aplicação será necessário a utilização do framework Laravel ou CakePHP para o backend, VueJS para o frontend e banco de dados MySQL.
-
-Requisitos do Sistema
-1)	O sistema deve permitir que o cliente selecione qual veículo deseja simular o financiamento.
-
-2)	Ao selecionar o item, o sistema deve exibir o valor do veículo selecionado e um campo para que ele coloque o valor de entrada que deseja dar no financiamento. 
-    -	O valor de entrada, pode ser qualquer valor inferior ao veículo que esteja sendo simulado
-
-3)	Ao clicar em simular o sistema deve exibir os valores das parcelas simuladas.
-    - A fórmula para calcular as parcelas é: (valor do carro - valor da entrada) / números de parcelas.
-    - O número de parcelas será: 6, 12 e 48
-
-## Para rodar o sistema:
-
-1)  Mover para a pasta do projeto e rodar os seguintes comandos:
-    -  ``composer install``
-    -  ``npm install``
-    -  ``php artisan serve``
+Esse projeto contém as páginas vue embarcadas.
+Para usar o aplicativo Vue separado acesse a página do projeto no [neste link](https://github.com/Ansuillia/listra-test-app-vue)
