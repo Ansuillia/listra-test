@@ -14,7 +14,7 @@
         </div>
         <div v-if="car" class="col s12 m6">
             <h6>Carro: <strong>{{ car.description }}</strong></h6>
-            <h6>Valor: <strong>{{ car.price }}</strong></h6>
+            <h6>Valor: <strong>{{ car.price | decimal}}</strong></h6>
         </div>
     </div>
 </template>
@@ -43,6 +43,5 @@ export default {
     updated () {
         M.FormSelect.init(this.$refs.selectCar)
     }
-
 };
 </script>

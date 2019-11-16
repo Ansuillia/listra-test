@@ -5,6 +5,16 @@ import App from './App'
 import router from './router'
 import store from './store'
 
+
+Vue.filter('decimal', function (value) {
+    if (!value) return ''
+
+    return parseFloat(value).toLocaleString('pt-BR', {
+        style: 'currency',
+        currency: 'BRL'
+    })
+})
+
 new Vue({
     router,
     store,
