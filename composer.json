@@ -1,10 +1,10 @@
 {
-    "name": "laravel/laravel",
+    "name": "awdm/listra-teste",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "Sistema web desenvolvido para teste do processo seletivo da Listra",
     "keywords": [
-        "framework",
-        "laravel"
+        "processo seletivo",
+        "listra"
     ],
     "license": "MIT",
     "require": {
