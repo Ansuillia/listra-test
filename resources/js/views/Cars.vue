@@ -1,6 +1,5 @@
 <template>
-    <div>
-        <h1>Cars</h1>
+    <div class="main row">
         <select-component></select-component>
         <details-component v-if="car"></details-component>
     </div>

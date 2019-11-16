@@ -1,25 +1,35 @@
 <template>
-    <div v-if="car">
-        <p>{{ car.description }}</p>
-        <p>{{ car.price }}</p>
-        <fieldset>
-            <legend>Parcelamento</legend>
-
-            <label for="entrada">Entrada</label>
-            <input v-model="entrada" type="number" id="entrada">
-            <button @click="calculo = true">Calcular</button>
-
-            <div v-if="calculo">
-                <p v-for="parcela in parcelas" v-bind:key="parcela">{{ parcela }}x de {{ (car.price - entrada) / parcela }}</p>
+    <div class="row">
+        <div class="input-field col s12 m6">
+            <money
+                v-model="entrada"
+                v-bind="money"
+                @change.native="validaEntrada"></money>
+            <label for="entrada" class="active">Entrada</label>
+        </div>
+        <div class="col s12 m6">
+            <button @click="calculo = true" class="btn btn-small blue waves-effect waves-light btn-simular" :disabled="entradaMaxima">Simular</button>
+        </div>
+        <div class="col s12">
+            <small v-if="entradaMaxima" class="red-text darken-2">O valor máximo de entrada deve ser o mesmo valor do carro</small>
+        </div>
+        <div v-if="calculo" class="section">
+            <div class="col s12 center">
+                <h5><strong>Valores simulados para você</strong></h5>
             </div>
-        </fieldset>
+            <div class="col s12 center">
+                <p v-for="parcela in parcelas" v-bind:key="parcela" class="flow-text">{{ parcela }}x de {{ (car.price - entrada) / parcela | decimal}}</p>
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
 import { mapState } from 'vuex'
+import {Money} from 'v-money'
 
 export default {
+    components: {Money},
     computed: {
         ...mapState([
             'car'
@@ -27,9 +37,27 @@ export default {
     },
     data () {
         return {
-            entrada: null,
-            parcelas: [6, 12, 24],
-            calculo: 0
+            entrada: 0.00,
+            parcelas: [48, 12, 6],
+            calculo: 0,
+            entradaMaxima: false,
+            money: {
+                decimal: ',',
+                thousands: '.',
+                prefix: 'R$ ',
+                precision: 2,
+                masked: false
+            }
+        }
+    },
+    methods: {
+        validaEntrada() {
+            if (this.entrada > this.car.price) {
+                this.entradaMaxima = true;
+                this.calculo = false;
+            } else {
+                this.entradaMaxima = false;
+            }
         }
     }
 }
