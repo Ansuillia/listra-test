@@ -7,7 +7,8 @@
         <title>{{ env('APP_NAME') }}</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
 
     </head>
     <body>

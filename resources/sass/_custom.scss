@@ -1,0 +1,19 @@
+.main {
+    border: 2px;
+    border-style: solid;
+    border-color: color("blue", "lighten-2");
+    padding: 3% 2% 3% 2%;
+    margin-top: 5vh;
+    min-height: 340px;
+}
+
+.btn-simular {
+    @media #{$small-and-down} {
+        width: 100%;
+        height: 100%;
+    }
+
+    @media #{$medium-and-up} {
+        margin-top: 27px;
+    }
+}
