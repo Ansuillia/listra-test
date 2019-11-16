@@ -18,3 +18,10 @@ Requisitos do Sistema
 3)	Ao clicar em simular o sistema deve exibir os valores das parcelas simuladas.
     - A fórmula para calcular as parcelas é: (valor do carro - valor da entrada) / números de parcelas.
     - O número de parcelas será: 6, 12 e 48
+
+## Para rodar o sistema:
+
+1)  Mover para a pasta do projeto e rodar os seguintes comandos:
+    -  ``composer install``
+    -  ``npm install``
+    -  ``php artisan serve``
