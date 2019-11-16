@@ -1895,6 +1895,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -1907,6 +1911,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       entrada: 0.00,
       parcelas: [48, 12, 6],
       calculo: 0,
+      entradaMaxima: false,
       money: {
         decimal: ',',
         thousands: '.',
@@ -1915,6 +1920,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         masked: false
       }
     };
+  },
+  methods: {
+    validaEntrada: function validaEntrada() {
+      if (this.entrada > this.car.price) {
+        this.entradaMaxima = true;
+        this.calculo = false;
+      } else {
+        this.entradaMaxima = false;
+      }
+    }
   }
 });
 
@@ -15620,6 +15635,11 @@ var render = function() {
           "money",
           _vm._b(
             {
+              nativeOn: {
+                change: function($event) {
+                  return _vm.validaEntrada($event)
+                }
+              },
               model: {
                 value: _vm.entrada,
                 callback: function($$v) {
@@ -15639,12 +15659,13 @@ var render = function() {
       1
     ),
     _vm._v(" "),
-    _c("div", [
+    _c("div", { staticClass: "col s12 m6" }, [
       _c(
         "button",
         {
           staticClass:
             "btn btn-small blue waves-effect waves-light btn-simular",
+          attrs: { disabled: _vm.entradaMaxima },
           on: {
             click: function($event) {
               _vm.calculo = true
@@ -15653,6 +15674,14 @@ var render = function() {
         },
         [_vm._v("Simular")]
       )
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "col s12" }, [
+      _vm.entradaMaxima
+        ? _c("small", { staticClass: "red-text darken-2" }, [
+            _vm._v("O valor máximo de entrada deve ser o mesmo valor do carro")
+          ])
+        : _vm._e()
     ]),
     _vm._v(" "),
     _vm.calculo
@@ -32164,7 +32193,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 vue__WEBPACK_IMPORTED_MODULE_1___default.a.filter('decimal', function (value) {
-  if (!value) return '';
   return parseFloat(value).toLocaleString('pt-BR', {
     style: 'currency',
     currency: 'BRL'

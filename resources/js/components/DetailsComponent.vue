@@ -3,11 +3,15 @@
         <div class="input-field col s12 m6">
             <money
                 v-model="entrada"
-                v-bind="money"></money>
+                v-bind="money"
+                @change.native="validaEntrada"></money>
             <label for="entrada">Entrada</label>
         </div>
-        <div>
-            <button @click="calculo = true" class="btn btn-small blue waves-effect waves-light btn-simular">Simular</button>
+        <div class="col s12 m6">
+            <button @click="calculo = true" class="btn btn-small blue waves-effect waves-light btn-simular" :disabled="entradaMaxima">Simular</button>
+        </div>
+        <div class="col s12">
+            <small v-if="entradaMaxima" class="red-text darken-2">O valor máximo de entrada deve ser o mesmo valor do carro</small>
         </div>
         <div v-if="calculo" class="section">
             <div class="col s12 center">
@@ -36,12 +40,23 @@ export default {
             entrada: 0.00,
             parcelas: [48, 12, 6],
             calculo: 0,
+            entradaMaxima: false,
             money: {
                 decimal: ',',
                 thousands: '.',
                 prefix: 'R$ ',
                 precision: 2,
                 masked: false
+            }
+        }
+    },
+    methods: {
+        validaEntrada() {
+            if (this.entrada > this.car.price) {
+                this.entradaMaxima = true;
+                this.calculo = false;
+            } else {
+                this.entradaMaxima = false;
             }
         }
     }
