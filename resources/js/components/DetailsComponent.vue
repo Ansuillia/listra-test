@@ -5,7 +5,7 @@
                 v-model="entrada"
                 v-bind="money"
                 @change.native="validaEntrada"></money>
-            <label for="entrada">Entrada</label>
+            <label for="entrada" class="active">Entrada</label>
         </div>
         <div class="col s12 m6">
             <button @click="calculo = true" class="btn btn-small blue waves-effect waves-light btn-simular" :disabled="entradaMaxima">Simular</button>

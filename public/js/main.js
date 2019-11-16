@@ -1851,6 +1851,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -2040,6 +2046,34 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -15585,20 +15619,29 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("nav", { staticClass: "nav-wrapper blue darken-1" }, [
-      _c(
-        "div",
-        { staticClass: "container" },
-        [
+  return _c("main", [
+    _c("nav", { staticClass: "nav-wrapper listra-nav blue darken-1" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
           _c(
-            "router-link",
-            { staticClass: "brand-logo center", attrs: { to: "/" } },
-            [_vm._v("Projeto teste Listra")]
+            "div",
+            { staticClass: "col s12" },
+            [
+              _c(
+                "router-link",
+                { staticClass: "brand-logo", attrs: { to: "/" } },
+                [
+                  _c("img", {
+                    staticClass: "listra-logo",
+                    attrs: { src: "/img/listraweb.png" }
+                  })
+                ]
+              )
+            ],
+            1
           )
-        ],
-        1
-      )
+        ])
+      ])
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "container" }, [_c("router-view")], 1)
@@ -15654,7 +15697,9 @@ var render = function() {
           )
         ),
         _vm._v(" "),
-        _c("label", { attrs: { for: "entrada" } }, [_vm._v("Entrada")])
+        _c("label", { staticClass: "active", attrs: { for: "entrada" } }, [
+          _vm._v("Entrada")
+        ])
       ],
       1
     ),
@@ -15840,7 +15885,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "main" },
+    { staticClass: "main row" },
     [
       _c("select-component"),
       _vm._v(" "),
@@ -15871,25 +15916,89 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("p", { staticClass: "flow-text" }, [
-        _vm._v(
-          "\n        Para esse teste eu achei melhor fazê-lo de duas formas.\n\n    "
-        )
-      ]),
+  return _c("div", [
+    _c("div", { staticClass: "row" }, [
+      _vm._m(0),
       _vm._v(" "),
-      _c(
-        "router-link",
-        { staticClass: "btn btn-primary", attrs: { to: "/cars" } },
-        [_vm._v("Orçamento")]
-      )
-    ],
-    1
-  )
+      _c("div", { staticClass: "col s12 m4" }, [
+        _c("h4", [_vm._v("Observações")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "divider" }),
+        _vm._v(" "),
+        _c("p", { staticClass: "flow-text" }, [
+          _vm._v(
+            "\n                Para esse teste eu optei por gerar views embarcadas e um app Vue.js separado.\n            "
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c(
+            "div",
+            { staticClass: "col s12" },
+            [
+              _c(
+                "router-link",
+                { staticClass: "btn blue col s12", attrs: { to: "/cars" } },
+                [_vm._v("Acessar Teste Embarcado")]
+              )
+            ],
+            1
+          )
+        ]),
+        _vm._v(" "),
+        _vm._m(1)
+      ])
+    ])
+  ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col s12 m8" }, [
+      _c("h4", [_vm._v("Algumas tecnologias utilizadas:")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "divider" }),
+      _vm._v(" "),
+      _c("ul", { staticClass: "collection with-header" }, [
+        _c("li", { staticClass: "collection-header" }, [
+          _c("h5", [_vm._v("Laravel")])
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "collection-item" }, [_vm._v("Migrations")]),
+        _vm._v(" "),
+        _c("li", { staticClass: "collection-item" }, [_vm._v("Resources")]),
+        _vm._v(" "),
+        _c("li", { staticClass: "collection-item" }, [_vm._v("Factory")]),
+        _vm._v(" "),
+        _c("li", { staticClass: "collection-item" }, [_vm._v("Middleware")]),
+        _vm._v(" "),
+        _c("li", { staticClass: "collection-header" }, [
+          _c("h5", [_vm._v("Vue.js")])
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "collection-item" }, [_vm._v("Vuex")]),
+        _vm._v(" "),
+        _c("li", { staticClass: "collection-item" }, [_vm._v("Router")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col s12" }, [
+        _c(
+          "a",
+          { staticClass: "btn blue darken-3 col s12", attrs: { href: "/" } },
+          [_vm._v("Repositório com Aplicativo")]
+        )
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 

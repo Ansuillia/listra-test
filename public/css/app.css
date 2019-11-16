@@ -9371,6 +9371,20 @@ input[type=range]::-ms-thumb {
   }
 }
 
+body {
+  display: -webkit-box;
+  display: flex;
+  min-height: 100vh;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+}
+
+main {
+  -webkit-box-flex: 1;
+          flex: 1 0 auto;
+}
+
 .main {
   border: 2px;
   border-style: solid;
@@ -9391,5 +9405,13 @@ input[type=range]::-ms-thumb {
   .btn-simular {
     margin-top: 27px;
   }
+}
+
+.listra-logo {
+  margin-top: 5px;
+}
+
+.listra-nav {
+  height: 60px;
 }
 

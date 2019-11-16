@@ -12,8 +12,23 @@
 
     </head>
     <body>
+
         <div id="app"></div>
 
+        <footer class="page-footer blue darken-2 listra-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 center">
+                        <h5 class="white-text">Anderson Dutra</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container center">
+                    &copy; 2019
+                </div>
+            </div>
+        </footer>
         <script src="{{ (env('APP_ENV') === 'development') ? mix('js/main.js') : asset('js/app.js') }}"></script>
     </body>
 </html>

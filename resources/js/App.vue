@@ -1,14 +1,20 @@
 <template>
-    <div>
-        <nav class="nav-wrapper blue darken-1">
+    <main>
+        <nav class="nav-wrapper listra-nav blue darken-1">
             <div class="container">
-                <router-link to='/' class="brand-logo center">Projeto teste Listra</router-link>
+                <div class="row">
+                    <div class="col s12">
+                        <router-link to='/' class="brand-logo">
+                            <img :src="'/img/listraweb.png'" class="listra-logo">
+                        </router-link>
+                    </div>
+                </div>
             </div>
         </nav>
         <div class="container">
             <router-view></router-view>
         </div>
-    </div>
+    </main>
 </template>
 
 <script>
